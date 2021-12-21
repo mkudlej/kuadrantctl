@@ -1,4 +1,6 @@
-module github.com/kuadrant/kuadrantctl
+module github.com/mkudlej/kuadrantctl
+
+replace github.com/kuadrant/kuadrantctl => github.com/mkudlej/kuadrantctl v0.0.0-20211221090451-11ee778de513
 
 go 1.16
 
@@ -6,6 +8,7 @@ require (
 	github.com/getkin/kin-openapi v0.76.0
 	github.com/google/uuid v1.3.0
 	github.com/kuadrant/kuadrant-controller v0.1.1
+	github.com/kuadrant/kuadrantctl v0.0.0-20211020070724-ae6ee5f2c87b
 	github.com/kuadrant/limitador-operator v0.2.0
 	github.com/onsi/ginkgo v1.16.4
 	github.com/onsi/gomega v1.13.0

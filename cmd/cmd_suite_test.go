@@ -9,7 +9,6 @@ import (
 	. "github.com/onsi/gomega"
 
 	apiextensionsv1 "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1"
-	apiextensionsv1beta1 "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/kubernetes/scheme"
@@ -56,7 +55,7 @@ var _ = BeforeSuite(func() {
 			return errors.New("runtime.Object could not be casted to client.Object")
 		}
 
-		if obj.GetObjectKind().GroupVersionKind().Group != apiextensionsv1beta1.GroupName &&
+		if obj.GetObjectKind().GroupVersionKind().Group != apiextensionsv1.GroupName &&
 			obj.GetObjectKind().GroupVersionKind().Group != apiextensionsv1.GroupName {
 			// only CRD's
 			return nil

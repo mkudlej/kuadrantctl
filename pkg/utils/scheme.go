@@ -6,7 +6,7 @@ import (
 	istio "istio.io/client-go/pkg/apis/networking/v1alpha3"
 	istioSecurity "istio.io/client-go/pkg/apis/security/v1beta1"
 	apiextensionsv1 "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1"
-	apiextensionsv1beta1 "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1"
+	apiextensionsv1 "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1"
 	"k8s.io/client-go/kubernetes/scheme"
 )
 
@@ -16,7 +16,7 @@ func SetupScheme() error {
 		return err
 	}
 
-	err = apiextensionsv1beta1.AddToScheme(scheme.Scheme)
+	err = apiextensionsv1.AddToScheme(scheme.Scheme)
 	if err != nil {
 		return err
 	}
